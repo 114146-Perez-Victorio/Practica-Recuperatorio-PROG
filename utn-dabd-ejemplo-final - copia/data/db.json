@@ -1,0 +1,47 @@
+{
+  "invoices": [
+    {
+      "id": "59e05f26-5830-48c9-825b-4704b9cb5969",
+      "createdDate": "2023-10-20",
+      "clientName": "Panificadora del Valle S.A.",
+      "tpe": "A",
+      "details": [
+        {
+          "id": "bc1b18f7-fccf-4770-9139-e5b3ee6cec75",
+          "productName": "Harina por bolsa de 50kg",
+          "amount": 2,
+          "price": 15000
+        },
+        {
+          "productName": "te",
+          "amount": 20,
+          "price": 2
+        }
+      ]
+    },
+    {
+      "id": "90d3ee46-667e-453e-89a9-7281454b9ea6",
+      "createdDate": "2023-10-22",
+      "clientName": "Juan de los Palotes",
+      "tpe": "A",
+      "details": [
+        {
+          "id": "627bb923-e30e-4d7b-a486-b5d943ee2c72",
+          "productName": "Café Molido por Caja 'La Virginia' (Pack 50 bolsas)",
+          "amount": 5,
+          "price": 10000
+        },
+        {
+          "productName": "banana",
+          "amount": 20,
+          "price": 2
+        },
+        {
+          "productName": "pure",
+          "amount": 10,
+          "price": 200
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+<div class="container mt-5">
+    <h2>Lista de Facturas</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Fecha de Creación</th>
+          <th scope="col">Cliente/Razón Social</th>
+          <th scope="col">Tipo de Factura</th>
+          <th scope="col">Total</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let factura of facturaArray">
+          <tr>
+            <td>{{ factura.createdDate }}</td>
+            <td>{{ factura.clientName }}</td>
+            <td>{{ factura.tpe }}</td>
+            <td>{{ calcularTotal(factura) }}</td>
+            <td>
+              <button
+                class="btn btn-primary"
+                type="button"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                (click)="toggleAccordion(factura.id)"
+              >
+                Ver Detalle
+              </button>
+              <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#agregarDetalleModal" (click)="identificador(factura.id)">
+                Agregar Detalle
+              </button>
+            </td>
+          </tr>
+          <tr *ngIf="expandedFacturaId === factura.id">
+            <td colspan="5">
+              <div class="accordion" id="detalleAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="detalleHeader">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#detalleCollapse' + factura.id" aria-expanded="true" aria-controls="detalleCollapse">
+                      Detalle de Factura
+                    </button>
+                  </h2>
+                  <div [id]="'detalleCollapse' + factura.id" class="accordion-collapse collapse show" aria-labelledby="detalleHeader" data-bs-parent="#detalleAccordion">
+                    <div class="accordion-body">
+                      <!-- Tabla con el detalle de la factura -->
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Nombre de Producto</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Precio Unitario</th>
+                            <th scope="col">Subtotal</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let detalle of factura.details">
+                            <td>{{ detalle.productName }}</td>
+                            <td>{{ detalle.amount }}</td>
+                            <td>{{ detalle.price }}</td>
+                            <td>{{ detalle.amount * detalle.price }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+  
+<!-- Modal para agregar detalles -->
+<div class="modal fade" id="agregarDetalleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Detalle</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="detalleForm">
+            <div class="mb-3">
+              <label for="nombreProducto" class="form-label">Nombre de Producto</label>
+              <input type="text" class="form-control" id="nombreProducto" required formControlName="productName">
+            </div>
+            <div class="mb-3">
+              <label for="cantidad" class="form-label">Cantidad</label>
+              <input type="number" class="form-control" id="cantidad" required formControlName="productAmount">
+            </div>
+            <div class="mb-3">
+              <label for="precioUnitario" class="form-label">Precio Unitario</label>
+              <input type="number" class="form-control" id="precioUnitario" required formControlName="productPrice">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="agregarDetalle()">Agregar Detalle</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
