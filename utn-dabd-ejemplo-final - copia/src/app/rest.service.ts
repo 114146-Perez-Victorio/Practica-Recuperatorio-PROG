@@ -21,8 +21,7 @@ export class RestService {
     return this.http.put<Factura>(url, factura);
   }
   
-  public postDetalleFactura(facturaId: string, detalle: DetailFactura): Observable<DetailFactura> {
-    const url = `${this.url}/${facturaId}`;
-    return this.http.post<DetailFactura>(url, detalle);
+  public postFactura( factura: Factura){
+    return this.http.post<Factura>(this.url,factura);
   }
 }

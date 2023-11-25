@@ -58,13 +58,13 @@ export class ListaFacturaComponent implements OnInit {
   
   agregarDetalle(): void {
     if (this.expandedFacturaId !== null) {
-      const nuevoDetalle: DetailFactura = {
+      let nuevoDetalle: DetailFactura = {
         productName: this.detalleForm.value.productName,
         amount: this.detalleForm.value.productAmount,
         price: this.detalleForm.value.productPrice,
       };
   
-      const facturaIndex = this.facturaArray.findIndex((factura) => factura.id === this.expandedFacturaId);
+      let facturaIndex = this.facturaArray.findIndex((factura) => factura.id === this.expandedFacturaId);
   
       if (facturaIndex !== -1) {
         this.facturaArray[facturaIndex].details.push(nuevoDetalle);

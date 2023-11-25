@@ -1,0 +1,17 @@
+<form [formGroup]="detalleForm">
+    <div class="mb-3">
+      <label for="productName" class="form-label">Nombre de Producto</label>
+      <input type="text" class="form-control" id="productName" formControlName="productName" required>
+    </div>
+    <div class="mb-3">
+      <label for="amount" class="form-label">Cantidad de Items</label>
+      <input type="number" class="form-control" id="amount" formControlName="amount" required>
+
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Precio unitario</label>
+      <input type="number" class="form-control" id="price" formControlName="price" required>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="guardarDetalle()">Guardar Detalle</button>
+  </form>
+  

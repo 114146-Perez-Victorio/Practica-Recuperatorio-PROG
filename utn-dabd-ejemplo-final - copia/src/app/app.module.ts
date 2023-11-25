@@ -7,12 +7,14 @@ import { ListaFacturaComponent } from './lista-factura/lista-factura.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddFacturaComponent } from './add-factura/add-factura.component';
+import { DetalleFacturaComponent } from './detalle-factura/detalle-factura.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaFacturaComponent,
     AddFacturaComponent,
+    DetalleFacturaComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,35 @@
-<p>add-factura works!</p>
+<form [formGroup]="facturaForm">
+  <div class="mb-3">
+    <label for="createdDate" class="form-label">Fecha de Creación</label>
+    <input
+      type="date"
+      class="form-control"
+      id="createdDate"
+      formControlName="createdDate"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="clientName" class="form-label">Cliente/Razón Social</label>
+    <input
+      type="text"
+      class="form-control"
+      id="clientName"
+      formControlName="clientName"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <label for="tpe" class="form-label">Tipo de Factura</label>
+    <input
+      type="text"
+      class="form-control"
+      id="tpe"
+      formControlName="tpe"
+      required
+    />
+  </div>
+  <!-- Otros campos del formulario si es necesario -->
+  <button type="button" class="btn btn-primary" (click)="guardarFactura()">
+    Guardar Factura
+  </button>
+</form>

@@ -42,6 +42,81 @@
           "price": 200
         }
       ]
+    },
+    {
+      "id": "c5pdfbZ",
+      "createdDate": "2020-03-04",
+      "clientName": "JUANSITO",
+      "tpe": "A",
+      "details": []
+    },
+    {
+      "id": "zXn7B3g",
+      "createdDate": "2023-05-20",
+      "clientName": "VIC",
+      "tpe": "B",
+      "details": []
+    },
+    {
+      "id": "wunQh71",
+      "createdDate": "2020-02-05",
+      "clientName": "VICTORIO",
+      "tpe": "A",
+      "details": [
+        {
+          "productName": "banana",
+          "amount": 2,
+          "price": 20
+        }
+      ]
+    },
+    {
+      "id": "T3bM-Z8",
+      "createdDate": "2025-02-03",
+      "clientName": "PEPE",
+      "tpe": "B",
+      "details": []
+    },
+    {
+      "id": "4ql8hj0",
+      "createdDate": "2024-02-03",
+      "clientName": "PEPito",
+      "tpe": "A",
+      "details": []
+    },
+    {
+      "id": "Ssfkhuy",
+      "createdDate": "2000-03-30",
+      "clientName": "jadja",
+      "tpe": "C",
+      "details": []
+    },
+    {
+      "id": "TqAKAh-",
+      "createdDate": "2020-02-02",
+      "clientName": "LOKITO",
+      "tpe": "A",
+      "details": []
+    },
+    {
+      "id": "uJA-nvF",
+      "createdDate": "2021-02-03",
+      "clientName": "qqQAA",
+      "tpe": "a",
+      "details": []
+    },
+    {
+      "id": "aqvNG5Q",
+      "createdDate": "2020-02-03",
+      "clientName": "juansito",
+      "tpe": "a",
+      "details": [
+        {
+          "productName": "papas",
+          "amount": 20,
+          "price": 2
+        }
+      ]
     }
   ]
 }
